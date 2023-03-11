@@ -1,0 +1,8 @@
+[package]
+name    = "TextTraveller"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+markdown = { version = "0.3.0" }
+druid    = { version = "0.7.0" }
