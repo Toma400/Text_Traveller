@@ -1,21 +1,27 @@
+mod converters;
 use druid::{
-    widget::Label,
+    widget::{
+        Container,
+        Label,
+        Split
+    },
     AppLauncher,
+    Color,
     Widget,
     WindowDesc
 };
 
 fn build_ui () -> impl Widget<()> {
-    Label::new(":)")
-}
-
-fn convert_picker (mode: &str, file: &str) -> () {
-    match mode {
-        "MD to HTML"  => (),
-        "MD to PDF"   => (),
-        "HTML to PDF" => (),
-        _             => (),
-    };
+    Split::columns(
+        Container::new(
+            Label::new(":)"),
+        )
+        .border(Color::grey(0.6), 2.0),
+        Container::new(
+            Label::new(":)"),
+        )
+        .border(Color::grey(0.6), 2.0),
+    )
 }
 
 fn main() {
@@ -26,5 +32,5 @@ fn main() {
 
     AppLauncher::with_window(main_window)
         .launch(initial_data)
-        .expect("Failed to launch application.");
+        .expect("Failed to launch application!");
 }
